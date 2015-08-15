@@ -1,0 +1,18 @@
+pkgname=bleachbit-bonus
+pkgver=0.8.2
+pkgrel=1
+pkgdesc='Additional cleaners for BleachBit'
+arch=(any)
+url=http://bleachbit.sourceforge.net
+license=(GPL3)
+depends=(bleachbit)
+source=(
+  http://downloads.sourceforge.net/project/bleachbit/bleachbit/$pkgver/$pkgname-$pkgver.tar.gz
+)
+sha256sums=(4f72df184ae71dcf8e77b82fa8c3945b7b25ec86e89dfa362ccd7961e5b8840b)
+
+package() {
+  cd $pkgname-$pkgver
+
+  make prefix=$pkgdir/usr install
+}
